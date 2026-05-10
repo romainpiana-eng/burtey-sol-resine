@@ -15,20 +15,18 @@ jobs:
       - name: Récupérer le code
         uses: actions/checkout@v4
 
+      - name: Préparer les fichiers à déployer
+        run: |
+          mkdir -p deploy
+          cp -r index.html services.html realisations.html zone.html contact.html css js deploy/
+
       - name: Déployer en SFTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           port: ${{ secrets.FTP_PORT }}
-          protocol: sftp
-          server-dir: ./public/
-          local-dir: ./
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/.github/**
-            **/README.md
-            **/.DS_Store
-            **/Thumbs.db
+          local_path: './deploy/*'
+          remote_path: '/public/'
+          sftp_only: true
