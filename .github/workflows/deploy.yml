@@ -18,7 +18,7 @@ jobs:
       - name: Préparer les fichiers à déployer
         run: |
           mkdir -p deploy
-          cp -r index.html services.html realisations.html zone.html contact.html css js deploy/
+          cp -r *.html css js images deploy/
 
       - name: Déployer en SFTP
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
