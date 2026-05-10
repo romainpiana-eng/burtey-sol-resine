@@ -358,6 +358,31 @@
   </svg>
 </a>
 
+<!-- ===== Lightbox (galerie plein écran) ===== -->
+<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog">
+  <button class="lightbox__close" aria-label="Fermer">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
+    </svg>
+  </button>
+  <button class="lightbox__prev" aria-label="Précédente">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="15 18 9 12 15 6"></polyline>
+    </svg>
+  </button>
+  <button class="lightbox__next" aria-label="Suivante">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </button>
+  <div class="lightbox__content">
+    <img class="lightbox__img" src="" alt="">
+    <div class="lightbox__caption"></div>
+    <div class="lightbox__counter"></div>
+  </div>
+</div>
+
 <script src="js/main.js"></script>
 </body>
 </html>
