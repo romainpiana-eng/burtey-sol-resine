@@ -989,6 +989,14 @@ section {
   background: var(--c-beige);
 }
 
+.service-block__media img,
+.service-block__media svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .service-block__num {
   font-family: var(--f-display);
   font-size: 0.85rem;
