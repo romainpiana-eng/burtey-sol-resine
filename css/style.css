@@ -18,18 +18,21 @@ html {
 }
 
 :root {
-  /* Palette */
+  /* Palette Burtey Sol & Résine
+     Calée sur l'identité visuelle : bleu marine + ocre + crème */
   --c-blanc: #fbf9f5;
-  --c-creme: #f4ede2;
+  --c-creme: #f2ebdd;          /* fond crème de la carte de visite */
   --c-beige: #e8dcc8;
   --c-sable: #d8c8ae;
   --c-gris-clair: #c9c2b8;
-  --c-gris: #6b6760;
-  --c-gris-fonce: #2e2c28;
-  --c-noir: #1a1816;
-  --c-terracotta: #b85c3c;
-  --c-terracotta-fonce: #9a4a2e;
-  --c-terracotta-clair: #d77a5a;
+  --c-gris: #5a6470;            /* gris très légèrement bleuté */
+  --c-gris-fonce: #2c3e54;
+  --c-noir: #1B3A5C;            /* bleu marine du logo "BURTEY" */
+  --c-noir-fonce: #102a44;      /* déclinaison pour hovers */
+  --c-terracotta: #C77A2D;      /* ocre du logo "Sol & Résine" */
+  --c-terracotta-fonce: #A35F1E;
+  --c-terracotta-clair: #E0973F;
+  --c-turquoise: #2A8FA8;       /* turquoise/sarcelle de la résine (accent secondaire) */
 
   /* Typographie */
   --f-display: "Fraunces", "Cormorant Garamond", Georgia, serif;
@@ -179,23 +182,38 @@ section {
 }
 
 .nav__logo {
-  font-family: var(--f-display);
-  font-size: 1.25rem;
-  font-weight: 400;
-  letter-spacing: -0.01em;
-  color: var(--c-noir);
-  line-height: 1.1;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  line-height: 1;
+  transition: opacity var(--t-fast);
 }
 
-.nav__logo span {
+.nav__logo:hover {
+  opacity: 0.8;
+}
+
+.nav__logo-img {
+  height: 52px;
+  width: auto;
   display: block;
-  font-family: var(--f-body);
-  font-size: 0.65rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--c-terracotta);
-  margin-top: 2px;
-  font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .nav__logo-img {
+    height: 64px;
+  }
+}
+
+/* État scrolled : logo légèrement plus petit */
+.nav.is-scrolled .nav__logo-img {
+  height: 44px;
+}
+
+@media (min-width: 768px) {
+  .nav.is-scrolled .nav__logo-img {
+    height: 52px;
+  }
 }
 
 .nav__menu {
