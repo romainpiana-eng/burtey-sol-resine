@@ -1904,3 +1904,197 @@ a.contact-card:hover {
     font-size: 0.95rem;
   }
 }
+
+/* ============================================
+   PARTENARIAT RÉSINEO
+   ============================================ */
+
+/* --- Bannière home (entre trust et intro) --- */
+.partner-banner {
+  padding: 0 0 var(--s-xl);
+  background: var(--c-blanc);
+}
+
+.partner-banner__inner {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: linear-gradient(135deg, var(--c-creme) 0%, var(--c-blanc) 100%);
+  border: 1px solid rgba(27, 58, 92, 0.1);
+  border-left: 4px solid var(--c-terracotta);
+  border-radius: 16px;
+  padding: 1.6rem 1.8rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.partner-banner__badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  flex: 0 0 auto;
+  color: var(--c-terracotta);
+  text-align: center;
+  padding-right: 1.5rem;
+  border-right: 1px solid rgba(27, 58, 92, 0.12);
+}
+
+.partner-banner__badge svg {
+  width: 38px;
+  height: 38px;
+}
+
+.partner-banner__badge span {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--c-noir);
+  white-space: nowrap;
+}
+
+.partner-banner__text {
+  flex: 1 1 auto;
+}
+
+.partner-banner__title {
+  font-family: var(--f-display);
+  font-size: 1.35rem;
+  font-weight: 400;
+  margin: 0 0 0.4rem;
+  color: var(--c-noir);
+  letter-spacing: -0.01em;
+}
+
+.partner-banner__title strong {
+  color: var(--c-terracotta);
+  font-weight: 500;
+}
+
+.partner-banner__desc {
+  font-size: 0.92rem;
+  color: var(--c-gris);
+  line-height: 1.55;
+  margin: 0;
+}
+
+@media (max-width: 720px) {
+  .partner-banner__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding: 1.4rem 1.4rem;
+  }
+  .partner-banner__badge {
+    flex-direction: row;
+    padding-right: 0;
+    padding-bottom: 0.8rem;
+    border-right: none;
+    border-bottom: 1px solid rgba(27, 58, 92, 0.12);
+    width: 100%;
+  }
+  .partner-banner__badge svg {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* --- Encart dans la page Services (section moquette) --- */
+.partner-card {
+  display: flex;
+  gap: 1.4rem;
+  align-items: center;
+  background: var(--c-creme);
+  border-radius: 14px;
+  padding: 1.3rem 1.4rem;
+  margin: 1.5rem 0 1.8rem;
+  border-left: 3px solid var(--c-terracotta);
+}
+
+.partner-card__logo {
+  flex: 0 0 auto;
+  width: 90px;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+.partner-card__content {
+  flex: 1;
+}
+
+.partner-card__title {
+  font-family: var(--f-display);
+  font-size: 1.15rem;
+  font-weight: 400;
+  margin: 0 0 0.4rem;
+  color: var(--c-noir);
+}
+
+.partner-card__title strong {
+  color: var(--c-terracotta);
+  font-weight: 500;
+}
+
+.partner-card__desc {
+  font-size: 0.88rem;
+  color: var(--c-gris);
+  line-height: 1.55;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .partner-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.9rem;
+    padding: 1.2rem;
+  }
+  .partner-card__logo {
+    width: 80px;
+  }
+}
+
+/* --- Mini-badge dans le footer --- */
+.footer__partner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 1.2rem;
+  padding: 0.6rem 0.8rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.78rem;
+  line-height: 1.3;
+  transition: all var(--t-fast);
+  max-width: 260px;
+}
+
+.footer__partner:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+.footer__partner img {
+  width: 38px;
+  height: auto;
+  flex: 0 0 auto;
+  border-radius: 4px;
+  display: block;
+}
+
+.footer__partner span {
+  flex: 1;
+  letter-spacing: 0.01em;
+}
+
+.footer__partner strong {
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
