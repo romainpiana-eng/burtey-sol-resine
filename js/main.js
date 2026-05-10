@@ -75,6 +75,94 @@ if (filterBtns.length && galleryItems.length) {
   });
 }
 
+// --- Lightbox galerie (clic sur photo = vue plein écran) ---
+const lightbox = document.getElementById('lightbox');
+if (lightbox && galleryItems.length) {
+  const lbImg = lightbox.querySelector('.lightbox__img');
+  const lbCaption = lightbox.querySelector('.lightbox__caption');
+  const lbCounter = lightbox.querySelector('.lightbox__counter');
+  const btnPrev = lightbox.querySelector('.lightbox__prev');
+  const btnNext = lightbox.querySelector('.lightbox__next');
+  const btnClose = lightbox.querySelector('.lightbox__close');
+
+  // Construire la liste des items qui ont une vraie image (pas les SVG)
+  const photoItems = Array.from(galleryItems).filter(item => item.querySelector('img'));
+  let currentIndex = 0;
+
+  function openLightbox(index) {
+    currentIndex = index;
+    updateLightbox();
+    lightbox.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+
+  function updateLightbox() {
+    const item = photoItems[currentIndex];
+    const img = item.querySelector('img');
+    const titleEl = item.querySelector('.gallery__caption h4');
+    const subEl = item.querySelector('.gallery__caption p');
+    lbImg.src = img.src;
+    lbImg.alt = img.alt;
+    lbCaption.innerHTML = titleEl ? `<strong>${titleEl.textContent}</strong>` : '';
+    if (subEl) lbCaption.innerHTML += `<span>${subEl.textContent}</span>`;
+    lbCounter.textContent = `${currentIndex + 1} / ${photoItems.length}`;
+  }
+
+  function next() {
+    currentIndex = (currentIndex + 1) % photoItems.length;
+    updateLightbox();
+  }
+  function prev() {
+    currentIndex = (currentIndex - 1 + photoItems.length) % photoItems.length;
+    updateLightbox();
+  }
+
+  // Clic sur une image → ouvrir
+  photoItems.forEach((item, idx) => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
+      openLightbox(idx);
+    });
+  });
+
+  // Boutons
+  btnClose.addEventListener('click', closeLightbox);
+  btnNext.addEventListener('click', next);
+  btnPrev.addEventListener('click', prev);
+
+  // Clic sur le fond (mais pas sur l'image) → fermer
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  // Clavier : Échap, flèches gauche/droite
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('is-open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') next();
+    if (e.key === 'ArrowLeft') prev();
+  });
+
+  // Swipe tactile sur mobile
+  let touchStartX = 0;
+  lightbox.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  });
+  lightbox.addEventListener('touchend', (e) => {
+    const touchEndX = e.changedTouches[0].screenX;
+    const diff = touchEndX - touchStartX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) prev();
+      else next();
+    }
+  });
+}
+
 // --- Formulaire contact (validation client + simulation envoi) ---
 const form = document.querySelector('form.form') || document.querySelector('.form form');
 if (form) {
