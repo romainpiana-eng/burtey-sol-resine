@@ -485,8 +485,7 @@ section {
   align-items: center;
   gap: 0.8rem;
   font-weight: 500;
-  opacity: 0;
-  animation: fadeUp 1s 0.2s var(--t-med) forwards;
+  animation: fadeUp 1s 0.2s var(--t-med) both;
 }
 
 .hero__eyebrow::before {
@@ -504,8 +503,7 @@ section {
   max-width: 14ch;
   font-size: clamp(2.2rem, 5vw, 3.6rem);
   line-height: 1.05;
-  opacity: 0;
-  animation: fadeUp 1s 0.4s var(--t-med) forwards;
+  animation: fadeUp 1s 0.4s var(--t-med) both;
 }
 
 .hero h1 em {
@@ -520,16 +518,14 @@ section {
   max-width: 42ch;
   margin-bottom: var(--s-lg);
   line-height: 1.6;
-  opacity: 0;
-  animation: fadeUp 1s 0.6s var(--t-med) forwards;
+  animation: fadeUp 1s 0.6s var(--t-med) both;
 }
 
 .hero__cta {
   display: flex;
   flex-wrap: wrap;
   gap: var(--s-sm);
-  opacity: 0;
-  animation: fadeUp 1s 0.8s var(--t-med) forwards;
+  animation: fadeUp 1s 0.8s var(--t-med) both;
 }
 
 .hero__cta .btn--ghost {
@@ -550,8 +546,7 @@ section {
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--c-gris);
-  opacity: 0;
-  animation: fadeUp 1s 1s var(--t-med) forwards;
+  animation: fadeUp 1s 1s var(--t-med) both;
 }
 
 .hero__meta div { margin-bottom: 4px; }
@@ -565,8 +560,7 @@ section {
   grid-template-rows: 1fr 1fr;
   gap: 12px;
   height: 480px;
-  opacity: 0;
-  animation: fadeUp 1.2s 0.6s var(--t-med) forwards;
+  animation: fadeUp 1.2s 0.6s var(--t-med) both;
 }
 
 @media (min-width: 992px) {
@@ -1709,6 +1703,18 @@ section {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+  /* Sécurité : tout élément animé doit être visible même sans animation */
+  .hero__eyebrow,
+  .hero h1,
+  .hero__subtitle,
+  .hero__cta,
+  .hero__meta,
+  .hero__mosaic,
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
 
