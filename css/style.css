@@ -2454,3 +2454,138 @@ a.contact-card:hover {
     max-height: 70vh;
   }
 }
+
+/* ============================================
+   PAGE MENTIONS LÉGALES
+   ============================================ */
+.legal-block {
+  margin-bottom: 3rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(27, 58, 92, 0.08);
+}
+
+.legal-block--last {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  margin-top: -1rem;
+}
+
+.legal-block h2 {
+  font-family: var(--f-display);
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  font-weight: 400;
+  color: var(--c-noir);
+  margin: 0 0 1.2rem;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.legal-block h3 {
+  font-family: var(--f-display);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--c-noir);
+  margin: 1.6rem 0 0.6rem;
+  letter-spacing: -0.005em;
+}
+
+.legal-block p {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: var(--c-gris);
+  margin: 0 0 1rem;
+}
+
+.legal-block p:last-child {
+  margin-bottom: 0;
+}
+
+.legal-block ul:not(.legal-list) {
+  padding-left: 1.5rem;
+  margin: 0.5rem 0 1rem;
+}
+
+.legal-block ul:not(.legal-list) li {
+  font-size: 0.96rem;
+  line-height: 1.7;
+  color: var(--c-gris);
+  margin-bottom: 0.3rem;
+}
+
+.legal-block a {
+  color: var(--c-terracotta);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--t-fast);
+}
+
+.legal-block a:hover {
+  border-bottom-color: var(--c-terracotta);
+}
+
+.legal-block strong {
+  color: var(--c-noir);
+  font-weight: 500;
+}
+
+.legal-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.legal-list li {
+  font-size: 0.96rem;
+  line-height: 1.6;
+  color: var(--c-gris);
+  padding-left: 1rem;
+  position: relative;
+}
+
+.legal-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 5px;
+  height: 5px;
+  background: var(--c-terracotta);
+  border-radius: 50%;
+}
+
+.legal-note {
+  background: var(--c-creme);
+  padding: 1rem 1.2rem;
+  border-radius: 8px;
+  border-left: 3px solid var(--c-terracotta);
+  font-size: 0.9rem !important;
+  margin-top: 1rem !important;
+}
+
+.legal-update {
+  text-align: center;
+  color: var(--c-gris);
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+.footer__bottom a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--t-fast);
+}
+
+.footer__bottom a:hover {
+  border-bottom-color: currentColor;
+}
+
+@media (max-width: 600px) {
+  .legal-block {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+  }
+}
