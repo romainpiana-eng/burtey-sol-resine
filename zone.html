@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zone d'intervention — Tournus, Mâcon, Chalon, Lyon, Dijon | Burtey Sol & Résine</title>
-<meta name="description" content="Carreleur basé à Tournus (71). Intervention dans un rayon de 2h : Mâcon, Chalon-sur-Saône, Bourg-en-Bresse, Lons-le-Saunier, Beaune, Lyon, Dijon.">
-<meta name="keywords" content="carreleur Mâcon, carreleur Chalon-sur-Saône, carreleur Lyon, carreleur Dijon, résine sol Saône-et-Loire, moquette de pierre Bourgogne">
+<title>Zone d'intervention — Rayon 60 km autour de Tournus | Burtey Sol & Résine</title>
+<meta name="description" content="Carreleur basé à Tournus (71). Intervention dans un rayon de 60 km : Beaune, Chalon-sur-Saône, Mâcon, Montceau-les-Mines, Lons-le-Saunier, Louhans, Cluny, Bourg-en-Bresse.">
+<meta name="keywords" content="carreleur Tournus, carreleur Mâcon, carreleur Beaune, carreleur Chalon-sur-Saône, résine sol Saône-et-Loire, moquette de pierre Bourgogne, carreleur Montceau-les-Mines">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -60,12 +60,12 @@
       <a href="index.html">Accueil</a> &nbsp;/&nbsp; Zone d'intervention
     </div>
     <span class="eyebrow">Tournus & alentours</span>
-    <h1>Un artisan local, dans un rayon de <em>2 heures</em>.</h1>
+    <h1>Un artisan local, dans un rayon de <em>60 km</em>.</h1>
     <p>
       Basé à Tournus, en Saône-et-Loire, j'interviens pour des chantiers de
-      carrelage, de résine décorative et de moquette de pierre dans toute la
-      Bourgogne du sud et le nord du Rhône-Alpes — du particulier qui rénove sa
-      salle de bain au commerçant qui aménage son local.
+      carrelage, de résine décorative et de moquette de pierre dans un rayon
+      d'environ 60 km — de Beaune à Mâcon sur l'axe nord-sud, de Montceau-les-Mines
+      à Lons-le-Saunier sur l'axe est-ouest.
     </p>
   </div>
 </section>
@@ -75,87 +75,137 @@
   <div class="container">
     <div class="zone__grid">
       <div class="zone__map reveal">
-        <!-- Carte stylisée des principales villes desservies -->
-        <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+        <!-- Carte SVG stylisée — rayon 60 km autour de Tournus -->
+        <svg viewBox="0 0 500 560" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <radialGradient id="zone-bg" cx="50%" cy="50%" r="60%">
-              <stop offset="0%" stop-color="#e8dcc8" stop-opacity="0.3"/>
-              <stop offset="100%" stop-color="#e8dcc8" stop-opacity="0"/>
+            <radialGradient id="zone-bg" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#C77A2D" stop-opacity="0.13"/>
+              <stop offset="70%" stop-color="#C77A2D" stop-opacity="0.06"/>
+              <stop offset="100%" stop-color="#C77A2D" stop-opacity="0"/>
             </radialGradient>
           </defs>
-          <rect width="500" height="500" fill="#f4ede2"/>
-          <!-- Cercle 2h -->
-          <circle cx="250" cy="250" r="200" fill="url(#zone-bg)" stroke="#b85c3c" stroke-width="1" stroke-dasharray="4 6" opacity="0.5"/>
-          <circle cx="250" cy="250" r="120" fill="none" stroke="#b85c3c" stroke-width="1" stroke-dasharray="2 4" opacity="0.3"/>
-          <!-- Tournus (centre) -->
-          <g>
-            <circle cx="250" cy="250" r="10" fill="#b85c3c"/>
-            <circle cx="250" cy="250" r="18" fill="none" stroke="#b85c3c" stroke-width="1" opacity="0.5"/>
-            <text x="265" y="255" font-family="Outfit, sans-serif" font-size="14" font-weight="500" fill="#1a1816">Tournus</text>
+
+          <!-- Fond -->
+          <rect width="500" height="560" rx="12" fill="#f2ebdd"/>
+
+          <!-- Grille légère -->
+          <g stroke="#d8c8ae" stroke-width="0.5" opacity="0.5">
+            <line x1="0" y1="140" x2="500" y2="140"/>
+            <line x1="0" y1="280" x2="500" y2="280"/>
+            <line x1="0" y1="420" x2="500" y2="420"/>
+            <line x1="125" y1="0" x2="125" y2="560"/>
+            <line x1="250" y1="0" x2="250" y2="560"/>
+            <line x1="375" y1="0" x2="375" y2="560"/>
           </g>
-          <!-- Villes -->
-          <g font-family="Outfit, sans-serif" font-size="12" fill="#2e2c28">
-            <!-- Mâcon (sud) -->
-            <circle cx="270" cy="330" r="5" fill="#1a1816"/>
-            <text x="285" y="335">Mâcon</text>
-            <!-- Chalon-sur-Saône (nord) -->
-            <circle cx="220" cy="170" r="5" fill="#1a1816"/>
-            <text x="65" y="173">Chalon-sur-Saône</text>
-            <!-- Beaune (nord) -->
-            <circle cx="180" cy="100" r="5" fill="#1a1816"/>
-            <text x="95" y="103">Beaune</text>
-            <!-- Dijon (nord) -->
-            <circle cx="200" cy="50" r="5" fill="#1a1816"/>
-            <text x="215" y="53">Dijon</text>
-            <!-- Bourg-en-Bresse (sud-est) -->
-            <circle cx="370" cy="350" r="5" fill="#1a1816"/>
-            <text x="240" y="375">Bourg-en-Bresse</text>
-            <!-- Lons-le-Saunier (est) -->
-            <circle cx="380" cy="220" r="5" fill="#1a1816"/>
-            <text x="395" y="225">Lons-le-Saunier</text>
-            <!-- Lyon (sud) -->
-            <circle cx="320" cy="430" r="5" fill="#1a1816"/>
-            <text x="335" y="435">Lyon</text>
+
+          <!-- Saône stylisée -->
+          <path d="M 262 0 C 264 90,258 180,262 280 C 266 370,260 460,264 560"
+            fill="none" stroke="#2A8FA8" stroke-width="3.5" stroke-linecap="round" opacity="0.3"/>
+          <text x="270" y="50" font-family="Outfit,sans-serif" font-size="10" fill="#2A8FA8" opacity="0.6">Saône</text>
+
+          <!-- Zone 60 km -->
+          <circle cx="250" cy="285" r="185" fill="url(#zone-bg)"/>
+          <circle cx="250" cy="285" r="185" fill="none" stroke="#C77A2D" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.55"/>
+
+          <!-- Ligne distance 60km -->
+          <line x1="250" y1="285" x2="435" y2="285" stroke="#C77A2D" stroke-width="0.8" stroke-dasharray="3 2" opacity="0.4"/>
+          <text x="315" y="278" font-family="Outfit,sans-serif" font-size="10" fill="#C77A2D" opacity="0.75">60 km</text>
+
+          <!-- TOURNUS — centre -->
+          <circle cx="250" cy="285" r="12" fill="#1B3A5C" opacity="0.15"/>
+          <circle cx="250" cy="285" r="7" fill="#1B3A5C"/>
+          <circle cx="250" cy="285" r="3" fill="white"/>
+          <text x="262" y="280" font-family="Outfit,sans-serif" font-size="13" font-weight="600" fill="#1B3A5C">Tournus</text>
+          <text x="262" y="293" font-family="Outfit,sans-serif" font-size="10" fill="#C77A2D">Base · 71700</text>
+
+          <!-- CHALON-SUR-SAÔNE — ~30km nord -->
+          <circle cx="248" cy="190" r="5" fill="#1B3A5C" opacity="0.7"/>
+          <text x="258" y="187" font-family="Outfit,sans-serif" font-size="11" font-weight="500" fill="#1B3A5C">Chalon-sur-Saône</text>
+          <text x="258" y="198" font-family="Outfit,sans-serif" font-size="10" fill="#5a6470">~30 km</text>
+
+          <!-- BEAUNE — ~55km nord -->
+          <circle cx="235" cy="110" r="5" fill="#1B3A5C" opacity="0.7"/>
+          <text x="245" y="107" font-family="Outfit,sans-serif" font-size="11" font-weight="500" fill="#1B3A5C">Beaune</text>
+          <text x="245" y="118" font-family="Outfit,sans-serif" font-size="10" fill="#5a6470">~55 km</text>
+
+          <!-- MÂCON — ~30km sud -->
+          <circle cx="255" cy="378" r="5" fill="#1B3A5C" opacity="0.7"/>
+          <text x="265" y="375" font-family="Outfit,sans-serif" font-size="11" font-weight="500" fill="#1B3A5C">Mâcon</text>
+          <text x="265" y="386" font-family="Outfit,sans-serif" font-size="10" fill="#5a6470">~30 km</text>
+
+          <!-- MONTCEAU-LES-MINES — ~45km ouest -->
+          <circle cx="95" cy="262" r="5" fill="#1B3A5C" opacity="0.7"/>
+          <text x="14" y="255" font-family="Outfit,sans-serif" font-size="10" font-weight="500" fill="#1B3A5C">Montceau-</text>
+          <text x="14" y="266" font-family="Outfit,sans-serif" font-size="10" font-weight="500" fill="#1B3A5C">les-Mines</text>
+          <text x="14" y="277" font-family="Outfit,sans-serif" font-size="9" fill="#5a6470">~45 km</text>
+
+          <!-- LONS-LE-SAUNIER — ~60km est -->
+          <circle cx="418" cy="295" r="5" fill="#1B3A5C" opacity="0.7"/>
+          <text x="424" y="290" font-family="Outfit,sans-serif" font-size="10" font-weight="500" fill="#1B3A5C">Lons-le-</text>
+          <text x="424" y="301" font-family="Outfit,sans-serif" font-size="10" font-weight="500" fill="#1B3A5C">Saunier</text>
+          <text x="424" y="312" font-family="Outfit,sans-serif" font-size="9" fill="#5a6470">~60 km</text>
+
+          <!-- Villes secondaires -->
+          <circle cx="118" cy="165" r="4" fill="#1B3A5C" opacity="0.5"/>
+          <text x="124" y="162" font-family="Outfit,sans-serif" font-size="10" fill="#5a6470">Le Creusot</text>
+
+          <circle cx="345" cy="285" r="4" fill="#1B3A5C" opacity="0.5"/>
+          <text x="351" y="282" font-family="Outfit,sans-serif" font-size="10" fill="#5a6470">Louhans</text>
+
+          <circle cx="178" cy="338" r="4" fill="#1B3A5C" opacity="0.5"/>
+          <text x="100" y="342" font-family="Outfit,sans-serif" font-size="10" fill="#5a6470">Cluny</text>
+
+          <circle cx="375" cy="405" r="4" fill="#1B3A5C" opacity="0.5"/>
+          <text x="314" y="422" font-family="Outfit,sans-serif" font-size="10" fill="#5a6470">Bourg-en-Bresse</text>
+
+          <circle cx="112" cy="342" r="4" fill="#1B3A5C" opacity="0.5"/>
+          <text x="14" y="350" font-family="Outfit,sans-serif" font-size="10" fill="#5a6470">Paray-le-Monial</text>
+
+          <!-- Rose des vents -->
+          <g opacity="0.3" transform="translate(468,42)">
+            <line x1="0" y1="-12" x2="0" y2="12" stroke="#1B3A5C" stroke-width="1"/>
+            <line x1="-12" y1="0" x2="12" y2="0" stroke="#1B3A5C" stroke-width="1"/>
+            <text x="0" y="-14" font-family="Outfit,sans-serif" font-size="9" text-anchor="middle" fill="#1B3A5C">N</text>
           </g>
-          <!-- Lignes routes -->
-          <g stroke="#b85c3c" stroke-width="0.8" fill="none" opacity="0.35">
-            <line x1="250" y1="250" x2="270" y2="330"/>
-            <line x1="250" y1="250" x2="220" y2="170"/>
-            <line x1="250" y1="250" x2="180" y2="100"/>
-            <line x1="250" y1="250" x2="200" y2="50"/>
-            <line x1="250" y1="250" x2="370" y2="350"/>
-            <line x1="250" y1="250" x2="380" y2="220"/>
-            <line x1="250" y1="250" x2="320" y2="430"/>
-          </g>
+
           <!-- Légende -->
-          <g font-family="Outfit, sans-serif" font-size="9" fill="#6b6760">
-            <text x="20" y="480">Zone d'intervention — environ 2h depuis Tournus</text>
+          <g transform="translate(14,516)">
+            <rect width="472" height="34" rx="6" fill="white" opacity="0.6"/>
+            <circle cx="16" cy="17" r="7" fill="none" stroke="#C77A2D" stroke-width="1.5" stroke-dasharray="4 3"/>
+            <text x="28" y="21" font-family="Outfit,sans-serif" font-size="10" fill="#5a6470">Rayon 60 km</text>
+            <circle cx="118" cy="17" r="5" fill="#1B3A5C"/>
+            <circle cx="118" cy="17" r="2" fill="white"/>
+            <text x="128" y="21" font-family="Outfit,sans-serif" font-size="10" fill="#5a6470">Base (Tournus)</text>
+            <circle cx="228" cy="17" r="4" fill="#1B3A5C" opacity="0.65"/>
+            <text x="238" y="21" font-family="Outfit,sans-serif" font-size="10" fill="#5a6470">Ville couverte</text>
+            <line x1="336" y1="17" x2="356" y2="17" stroke="#2A8FA8" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+            <text x="362" y="21" font-family="Outfit,sans-serif" font-size="10" fill="#5a6470">Saône</text>
           </g>
         </svg>
       </div>
 
       <div class="reveal">
         <span class="eyebrow">Villes desservies</span>
-        <h2>Bourgogne & <em>Rhône-Alpes</em>.</h2>
+        <h2>Bourgogne & <em>Bresse</em>.</h2>
         <p>
-          Pas besoin que vous habitiez Tournus pour faire appel à mes services.
-          Je me déplace sans surcoût dans toute la zone ci-dessous. Pour les
-          villes plus éloignées, on peut en discuter au cas par cas.
+          Basé à Tournus, j'interviens sans surcoût dans un rayon de 60 km.
+          Pour les chantiers au-delà, n'hésitez pas à me contacter —
+          selon l'ampleur du projet, c'est souvent possible.
         </p>
 
         <div class="zone__cities">
           <div class="zone__city"><strong>Tournus</strong><span>71</span></div>
-          <div class="zone__city"><strong>Mâcon</strong><span>71</span></div>
           <div class="zone__city"><strong>Chalon-sur-Saône</strong><span>71</span></div>
-          <div class="zone__city"><strong>Bourg-en-Bresse</strong><span>01</span></div>
-          <div class="zone__city"><strong>Lons-le-Saunier</strong><span>39</span></div>
           <div class="zone__city"><strong>Beaune</strong><span>21</span></div>
-          <div class="zone__city"><strong>Lyon</strong><span>69</span></div>
-          <div class="zone__city"><strong>Dijon</strong><span>21</span></div>
-          <div class="zone__city"><strong>Cluny</strong><span>71</span></div>
+          <div class="zone__city"><strong>Mâcon</strong><span>71</span></div>
+          <div class="zone__city"><strong>Montceau-les-Mines</strong><span>71</span></div>
+          <div class="zone__city"><strong>Lons-le-Saunier</strong><span>39</span></div>
           <div class="zone__city"><strong>Louhans</strong><span>71</span></div>
-          <div class="zone__city"><strong>Villefranche</strong><span>69</span></div>
-          <div class="zone__city"><strong>Givors</strong><span>69</span></div>
+          <div class="zone__city"><strong>Cluny</strong><span>71</span></div>
+          <div class="zone__city"><strong>Le Creusot</strong><span>71</span></div>
+          <div class="zone__city"><strong>Bourg-en-Bresse</strong><span>01</span></div>
+          <div class="zone__city"><strong>Paray-le-Monial</strong><span>71</span></div>
+          <div class="zone__city"><strong>Sennecey-le-Grand</strong><span>71</span></div>
         </div>
 
         <a href="contact.html" class="btn btn--primary mt-lg">
@@ -175,9 +225,9 @@
       <p>
         Tournus est idéalement situé à mi-chemin entre Chalon-sur-Saône et
         Mâcon, à proximité immédiate de l'A6. Ce positionnement permet de
-        rejoindre rapidement les principales villes de la région : 30 minutes
-        pour Chalon ou Mâcon, 45 minutes pour Beaune, environ 1h pour Bourg-en-Bresse,
-        Lons-le-Saunier ou Dijon, et un peu plus d'1h30 pour Lyon.
+        rejoindre rapidement les principales villes de la région : 30 minutes pour Chalon ou Mâcon,
+        45 minutes pour Beaune ou Montceau-les-Mines, et environ 50 minutes pour
+        Lons-le-Saunier ou Bourg-en-Bresse.
       </p>
       <p>
         Que vous soyez un particulier souhaitant rénover votre intérieur, un
@@ -188,7 +238,7 @@
       </p>
       <p>
         Je travaille principalement avec des particuliers de Saône-et-Loire (71),
-        de la Côte-d'Or (21), de l'Ain (01), du Jura (39) et du Rhône (69). La
+        de la Côte-d'Or (21), de l'Ain (01) et du Jura (39). La
         proximité me permet d'assurer un suivi de chantier rigoureux, et de
         revenir facilement si une retouche est nécessaire après livraison.
       </p>
