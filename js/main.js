@@ -191,10 +191,20 @@ if (form) {
     }
 
     try {
+      // Construire les données en JSON pour que _subject soit bien pris en compte
+      const formData = new FormData(form);
+      const data = {};
+      formData.forEach((value, key) => { data[key] = value; });
+      // Forcer le sujet et la langue
+      data['_subject'] = 'Nouvelle demande de devis — Burtey Sol & Résine';
+
       const response = await fetch(form.action, {
         method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
+        body: JSON.stringify(data),
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
       });
 
       if (response.ok) {
