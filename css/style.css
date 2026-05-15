@@ -35,7 +35,7 @@ html {
   --c-turquoise: #2A8FA8;       /* turquoise/sarcelle de la résine (accent secondaire) */
 
   /* Typographie */
-  --f-display: "Fraunces", "Cormorant Garamond", Georgia, serif;
+  --f-display: "Playfair Display", Georgia, serif;
   --f-body: "Outfit", "Helvetica Neue", system-ui, sans-serif;
 
   /* Espacements */
@@ -301,6 +301,10 @@ section {
   margin-left: auto;
 }
 
+.nav__burger.open span {
+  background: white;
+}
+
 .nav__burger span:nth-child(2) { width: 16px; }
 
 .nav__burger.open span:nth-child(1) {
@@ -317,13 +321,14 @@ section {
 .nav__mobile {
   position: fixed;
   inset: 0;
-  background: var(--c-creme);
+  background: #1B3A5C;
   z-index: 99;
   padding: 7rem var(--s-md) var(--s-lg);
   transform: translateX(100%);
-  transition: transform var(--t-med);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
 }
 
 .nav__mobile.open { transform: translateX(0); }
@@ -344,18 +349,25 @@ section {
   font-family: var(--f-display);
   font-size: 2rem;
   font-weight: 300;
-  color: var(--c-noir);
+  color: rgba(255, 255, 255, 0.9);
   display: block;
   padding-bottom: 0.6rem;
-  border-bottom: 1px solid var(--c-beige);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  transition: color var(--t-fast), padding-left var(--t-fast);
 }
 
-.nav__mobile a.active { color: var(--c-terracotta); }
+.nav__mobile a:hover {
+  color: #fff;
+  padding-left: 0.5rem;
+}
+
+.nav__mobile a.active { color: #C77A2D; }
 
 .nav__mobile-footer {
   padding-top: var(--s-md);
-  border-top: 1px solid var(--c-beige);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
   font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .nav__mobile-footer a {
@@ -364,6 +376,7 @@ section {
   border: none;
   padding: 0;
   display: inline;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 /* ---------- Boutons ---------- */
