@@ -163,14 +163,15 @@ if (lightbox && galleryItems.length) {
   });
 }
 
-// --- Formulaire contact (validation client + simulation envoi) ---
+// --- Formulaire contact (validation + envoi réel via Formspree) ---
 const form = document.querySelector('form.form') || document.querySelector('.form form');
 if (form) {
   const feedback = document.getElementById('formFeedback');
-  form.addEventListener('submit', (e) => {
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    // Vérification HTML5
+    // Validation HTML5
     if (!form.checkValidity()) {
       form.reportValidity();
       if (feedback) {
@@ -189,19 +190,39 @@ if (form) {
       feedback.className = 'form__feedback';
     }
 
-    // Simulation : en production, envoyer à un endpoint (ex: Formspree, Netlify Forms, API)
-    setTimeout(() => {
-      submitBtn.innerHTML = '✓ Demande envoyée';
-      form.reset();
-      if (feedback) {
-        feedback.textContent = 'Merci ! Votre demande a bien été envoyée. Je reviens vers vous sous 24h.';
-        feedback.className = 'form__feedback is-success';
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        // Succès
+        submitBtn.innerHTML = '✓ Demande envoyée';
+        form.reset();
+        if (feedback) {
+          feedback.textContent = 'Merci ! Votre demande a bien été envoyée. Romain revient vers vous sous 24h.';
+          feedback.className = 'form__feedback is-success';
+        }
+        setTimeout(() => {
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
+        }, 4000);
+      } else {
+        // Erreur Formspree
+        const data = await response.json();
+        throw new Error(data?.errors?.map(e => e.message).join(', ') || 'Erreur inconnue');
       }
-      setTimeout(() => {
-        submitBtn.innerHTML = originalText;
-        submitBtn.disabled = false;
-      }, 3000);
-    }, 1200);
+    } catch (err) {
+      // Erreur réseau ou autre
+      submitBtn.innerHTML = originalText;
+      submitBtn.disabled = false;
+      if (feedback) {
+        feedback.textContent = 'Une erreur est survenue. Merci de nous contacter directement au 06 09 48 54 18 ou par email.';
+        feedback.className = 'form__feedback is-error';
+      }
+    }
   });
 }
 
