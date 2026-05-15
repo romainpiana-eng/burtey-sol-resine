@@ -163,76 +163,24 @@ if (lightbox && galleryItems.length) {
   });
 }
 
-// --- Formulaire contact (validation + envoi réel via Formspree) ---
+// --- Formulaire contact (validation + soumission native vers Formspree) ---
 const form = document.querySelector('form.form') || document.querySelector('.form form');
 if (form) {
-  const feedback = document.getElementById('formFeedback');
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
+  form.addEventListener('submit', (e) => {
     // Validation HTML5
     if (!form.checkValidity()) {
+      e.preventDefault();
       form.reportValidity();
-      if (feedback) {
-        feedback.textContent = 'Merci de compléter les champs obligatoires.';
-        feedback.className = 'form__feedback is-error';
-      }
       return;
     }
-
+    // Feedback visuel pendant l'envoi
     const submitBtn = form.querySelector('button[type="submit"]');
-    const originalText = submitBtn.innerHTML;
-    submitBtn.innerHTML = 'Envoi en cours…';
-    submitBtn.disabled = true;
-    if (feedback) {
-      feedback.textContent = '';
-      feedback.className = 'form__feedback';
+    if (submitBtn) {
+      submitBtn.innerHTML = 'Envoi en cours…';
+      submitBtn.disabled = true;
     }
-
-    try {
-      // Construire les données en JSON pour que _subject soit bien pris en compte
-      const formData = new FormData(form);
-      const data = {};
-      formData.forEach((value, key) => { data[key] = value; });
-      // Forcer le sujet et la langue
-      data['_subject'] = 'Nouvelle demande de devis — Burtey Sol & Résine';
-
-      const response = await fetch(form.action, {
-        method: 'POST',
-        body: JSON.stringify(data),
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        }
-      });
-
-      if (response.ok) {
-        // Succès
-        submitBtn.innerHTML = '✓ Demande envoyée';
-        form.reset();
-        if (feedback) {
-          feedback.textContent = 'Merci ! Votre demande a bien été envoyée. Romain revient vers vous sous 24h.';
-          feedback.className = 'form__feedback is-success';
-        }
-        setTimeout(() => {
-          submitBtn.innerHTML = originalText;
-          submitBtn.disabled = false;
-        }, 4000);
-      } else {
-        // Erreur Formspree
-        const data = await response.json();
-        throw new Error(data?.errors?.map(e => e.message).join(', ') || 'Erreur inconnue');
-      }
-    } catch (err) {
-      // Erreur réseau ou autre
-      submitBtn.innerHTML = originalText;
-      submitBtn.disabled = false;
-      if (feedback) {
-        feedback.textContent = 'Une erreur est survenue. Merci de nous contacter directement au 06 09 48 54 18 ou par email.';
-        feedback.className = 'form__feedback is-error';
-      }
-    }
+    // La soumission continue normalement vers Formspree
+    // qui redirige ensuite vers merci.html via _next
   });
 }
 
