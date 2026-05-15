@@ -163,27 +163,6 @@ if (lightbox && galleryItems.length) {
   });
 }
 
-// --- Formulaire contact (validation + soumission native vers Formspree) ---
-const form = document.querySelector('form.form') || document.querySelector('.form form');
-if (form) {
-  form.addEventListener('submit', (e) => {
-    // Validation HTML5
-    if (!form.checkValidity()) {
-      e.preventDefault();
-      form.reportValidity();
-      return;
-    }
-    // Feedback visuel pendant l'envoi
-    const submitBtn = form.querySelector('button[type="submit"]');
-    if (submitBtn) {
-      submitBtn.innerHTML = 'Envoi en cours…';
-      submitBtn.disabled = true;
-    }
-    // La soumission continue normalement vers Formspree
-    // qui redirige ensuite vers merci.html via _next
-  });
-}
-
 // --- Année dynamique footer ---
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
