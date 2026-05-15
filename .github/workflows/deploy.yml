@@ -23,7 +23,7 @@ jobs:
                sftp://${{ secrets.FTP_SERVER }} <<SCRIPT
           set sftp:auto-confirm yes
           set ssl:verify-certificate no
-          mirror --reverse --verbose --delete \
+          mirror --reverse --verbose \
                  --exclude ^\.git/ \
                  --exclude ^\.github/ \
                  ./ /public/
