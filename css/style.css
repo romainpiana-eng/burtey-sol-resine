@@ -2117,7 +2117,7 @@ a.contact-card:hover {
 
 /* --- Bannière home (entre trust et intro) --- */
 .partner-banner {
-  padding: 0 0 var(--s-xl);
+  padding: var(--s-xl) 0 var(--s-xl);
   background: var(--c-blanc);
 }
 
