@@ -656,6 +656,13 @@ section {
   transform: translateY(0);
 }
 
+/* Sur mobile : légendes toujours visibles (pas de hover possible) */
+@media (max-width: 991px) {
+  .hero__photo-caption {
+    transform: translateY(0);
+  }
+}
+
 .hero__photo-caption span {
   display: block;
   font-family: var(--f-display);
