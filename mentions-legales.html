@@ -27,7 +27,6 @@
 <link rel="preload" href="fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/playfair-display-latin.woff2" as="font" type="font/woff2" crossorigin>
 
-<!-- MESURE D'AUDIENCE : emplacement réservé (outil à choisir) -->
 
 <!-- Données structurées schema.org -->
 <script type="application/ld+json">
@@ -62,7 +61,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
 <meta name="theme-color" content="#1B3A5C">
 
-<link rel="stylesheet" href="css/style.css?v=20261003">
+<link rel="stylesheet" href="css/style.css?v=20261003b">
 </head>
 <body>
 
@@ -245,7 +244,17 @@
         Ce site ne dépose <strong>aucun cookie</strong>, ni publicitaire, ni de mesure d'audience.
       </p>
       <p>
-        <strong>Mesure d'audience.</strong> Ce site n'utilise actuellement aucun outil de mesure d'audience.
+        <strong>Mesure d'audience.</strong> Pour savoir quelles pages sont consultées et
+        améliorer le site, j'utilise <a href="https://umami.is/privacy" target="_blank" rel="noopener">Umami</a>.
+        Cet outil ne dépose aucun cookie, ne collecte aucune donnée permettant de vous identifier
+        et ne vous suit pas d'un site à l'autre : il produit uniquement des statistiques anonymes
+        et agrégées (nombre de visites, pages vues, provenance générale, clics sur les boutons de
+        contact). Conformément aux lignes directrices de la CNIL, cette mesure est exemptée de
+        consentement. Vous pouvez néanmoins vous y opposer sur cet appareil :
+      </p>
+      <p>
+        <button type="button" class="btn btn--ghost" data-analytics-optout>Ne plus être comptabilisé</button>
+        <span data-analytics-optout-status style="margin-left:.6rem;font-size:.9rem;"></span>
       </p>
       <p>
         <strong>Carte.</strong> La carte de la page Contact est fournie par Google Maps. Elle n'est
@@ -357,6 +366,6 @@
   </svg>
 </a>
 
-<script src="js/main.js?v=20261003"></script>
+<script src="js/main.js?v=20261003b"></script>
 </body>
 </html>

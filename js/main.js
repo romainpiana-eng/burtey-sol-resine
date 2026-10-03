@@ -168,9 +168,29 @@ const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 // ============================================
+//   UMAMI — mesure d'audience sans cookie
+//   ► Colle ici l'identifiant du site (Umami > Settings > Websites >
+//     Edit > Tracking code : valeur de data-website-id).
+//   ► Vérifie aussi l'adresse du script affichée dans ce même code.
+//   Tant que UMAMI_ID est vide, rien n'est chargé.
+// ============================================
+const UMAMI_ID = '2bea83d0-92a9-4940-83f5-d232e1c66505';
+const UMAMI_SRC = 'https://cloud.umami.is/script.js';
+
+(() => {
+  if (!UMAMI_ID) return;
+  try { if (localStorage.getItem('umami.disabled')) return; } catch (e) {}
+  const s = document.createElement('script');
+  s.defer = true;
+  s.src = UMAMI_SRC;
+  s.setAttribute('data-website-id', UMAMI_ID);
+  s.setAttribute('data-domains', 'burtey-sol-resine.fr'); // ignore les tests en local
+  document.head.appendChild(s);
+})();
+
+// ============================================
 //   MESURE D'AUDIENCE — conversions
-//   Fonctionne avec Umami ou Matomo dès que l'un des deux est installé ;
-//   sans outil, ces appels ne font rien.
+//   Les événements apparaissent dans Umami > Events, sans configuration.
 // ============================================
 const track = (name) => {
   try {
@@ -220,3 +240,25 @@ document.querySelectorAll('[data-map-src]').forEach((wrap) => {
     wrap.querySelector('.map-consent').replaceWith(iframe);
   });
 });
+
+// --- Opposition à la mesure d'audience (page Mentions légales) ---
+// Umami ne compte plus les visites quand localStorage « umami.disabled » existe.
+const optBtn = document.querySelector('[data-analytics-optout]');
+const optStatus = document.querySelector('[data-analytics-optout-status]');
+if (optBtn) {
+  const isOff = () => { try { return !!localStorage.getItem('umami.disabled'); } catch (e) { return false; } };
+  const refresh = () => {
+    optBtn.textContent = isOff() ? 'Être à nouveau comptabilisé' : 'Ne plus être comptabilisé';
+    if (optStatus) optStatus.textContent = isOff()
+      ? 'Vos visites ne sont plus mesurées sur cet appareil.'
+      : 'Vos visites sont mesurées de façon anonyme.';
+  };
+  optBtn.addEventListener('click', () => {
+    try {
+      if (isOff()) localStorage.removeItem('umami.disabled');
+      else localStorage.setItem('umami.disabled', '1');
+    } catch (e) {}
+    refresh();
+  });
+  refresh();
+}
