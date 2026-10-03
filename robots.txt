@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://burtey-sol-resine.fr/sitemap.xml

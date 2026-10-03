@@ -9,45 +9,157 @@
 <meta name="keywords" content="carreleur Tournus, résine sol Tournus, moquette de pierre Tournus, carrelage Mâcon, carrelage Chalon-sur-Saône">
 <meta name="author" content="Burtey Sol & Résine">
 <meta name="robots" content="index, follow">
-<meta name="geo.region" content="FR-71">
-<meta name="geo.placename" content="Tournus">
 
-<!-- Open Graph -->
+<link rel="canonical" href="https://burtey-sol-resine.fr/">
+
+<!-- Open Graph / partage (WhatsApp, Facebook, SMS) -->
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Burtey Sol &amp; Résine">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:url" content="https://burtey-sol-resine.fr/">
 <meta property="og:title" content="Burtey Sol & Résine — Carreleur artisan à Tournus">
 <meta property="og:description" content="Carrelage, résine décorative et moquette de pierre. Artisan local, travail soigné, devis gratuit.">
-<meta property="og:locale" content="fr_FR">
+<meta property="og:image" content="https://burtey-sol-resine.fr/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Plage de piscine en moquette de pierre réalisée par Burtey Sol &amp; Résine">
+<meta name="twitter:card" content="summary_large_image">
 
-<!-- Schema.org : LocalBusiness -->
+<!-- Polices auto-hébergées : préchargement des deux principales -->
+<link rel="preload" href="fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/playfair-display-latin.woff2" as="font" type="font/woff2" crossorigin>
+
+<!-- MESURE D'AUDIENCE : emplacement réservé (outil à choisir) -->
+
+<!-- Données structurées schema.org -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Burtey Sol & Résine",
-  "image": "",
-  "description": "Artisan spécialiste du carrelage, de la résine décorative pailletée et de la moquette de pierre à Tournus et alentours.",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Tournus",
-    "postalCode": "71700",
-    "addressRegion": "Saône-et-Loire",
-    "addressCountry": "FR"
-  },
-  "areaServed": ["Tournus", "Mâcon", "Chalon-sur-Saône", "Beaune", "Montceau-les-Mines", "Lons-le-Saunier", "Louhans", "Cluny", "Bourg-en-Bresse", "Paray-le-Monial"],
-  "telephone": "+33609485418",
-  "priceRange": "€€"
+  "@graph": [
+    {
+      "@type": "HomeAndConstructionBusiness",
+      "@id": "https://burtey-sol-resine.fr/#entreprise",
+      "name": "Burtey Sol & Résine",
+      "legalName": "Burtey Romain Carrelage",
+      "url": "https://burtey-sol-resine.fr/",
+      "logo": "https://burtey-sol-resine.fr/images/logo-full.png",
+      "image": "https://burtey-sol-resine.fr/images/og-image.jpg",
+      "description": "Artisan carreleur basé près de Tournus : carrelage intérieur et extérieur, résine décorative pailletée et moquette de pierre, dans un rayon de 60 km en Saône-et-Loire, Ain et Jura.",
+      "telephone": "+33609485418",
+      "email": "burtey.carrelage@gmail.com",
+      "priceRange": "€€",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Jugy",
+        "postalCode": "71240",
+        "addressRegion": "Saône-et-Loire",
+        "addressCountry": "FR"
+      },
+      "areaServed": [
+        {
+          "@type": "GeoCircle",
+          "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": 46.5627,
+            "longitude": 4.9097
+          },
+          "geoRadius": 60000
+        },
+        {
+          "@type": "City",
+          "name": "Tournus"
+        },
+        {
+          "@type": "City",
+          "name": "Mâcon"
+        },
+        {
+          "@type": "City",
+          "name": "Chalon-sur-Saône"
+        },
+        {
+          "@type": "City",
+          "name": "Beaune"
+        },
+        {
+          "@type": "City",
+          "name": "Cluny"
+        },
+        {
+          "@type": "City",
+          "name": "Louhans"
+        },
+        {
+          "@type": "City",
+          "name": "Montceau-les-Mines"
+        },
+        {
+          "@type": "City",
+          "name": "Lons-le-Saunier"
+        },
+        {
+          "@type": "City",
+          "name": "Bourg-en-Bresse"
+        },
+        {
+          "@type": "City",
+          "name": "Paray-le-Monial"
+        }
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "08:00",
+          "closes": "19:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "17:00"
+        }
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Romain Burtey"
+      },
+      "knowsAbout": [
+        "Carrelage",
+        "Résine décorative pailletée",
+        "Moquette de pierre",
+        "Sol drainant",
+        "Plage de piscine"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://burtey-sol-resine.fr/#site",
+      "url": "https://burtey-sol-resine.fr/",
+      "name": "Burtey Sol & Résine",
+      "inLanguage": "fr-FR",
+      "publisher": {
+        "@id": "https://burtey-sol-resine.fr/#entreprise"
+      }
+    }
+  ]
 }
 </script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<meta name="geo.region" content="FR-71">
+<meta name="geo.placename" content="Tournus">
 <!-- Favicons -->
 <link rel="icon" type="image/png" sizes="48x48" href="images/favicon.png">
 <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
 <meta name="theme-color" content="#1B3A5C">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css?v=20261003">
 </head>
 <body>
 
@@ -55,7 +167,7 @@
 <header class="nav">
   <div class="container nav__inner">
     <a href="index.html" class="nav__logo" aria-label="Burtey Sol & Résine - Accueil">
-      <img src="images/logo-full.png" alt="Burtey Sol & Résine" class="nav__logo-img">
+      <img src="images/logo-full.webp" alt="Burtey Sol & Résine" class="nav__logo-img">
     </a>
     <nav>
       <ul class="nav__menu">
@@ -115,21 +227,21 @@
     <!-- Mosaïque de réalisations -->
     <div class="hero__mosaic">
       <a href="realisations.html" class="hero__photo hero__photo--main" aria-label="Voir nos réalisations carrelage">
-        <img src="images/realisation-piscine.jpg" alt="Tour de piscine en carrelage grand format gris" loading="eager">
+        <img src="images/realisation-piscine.webp" alt="Tour de piscine en carrelage grand format gris" loading="eager">
         <div class="hero__photo-caption">
           <span>Tour de piscine</span>
           <small>Carrelage grand format</small>
         </div>
       </a>
       <a href="realisations.html" class="hero__photo hero__photo--top" aria-label="Voir nos réalisations moquette de pierre">
-        <img src="images/moquette-moulin-piscine.jpg" alt="Moquette de pierre autour d'une piscine — moulin en arrière-plan" loading="eager">
+        <img src="images/moquette-moulin-piscine.webp" alt="Moquette de pierre autour d'une piscine — moulin en arrière-plan" loading="eager">
         <div class="hero__photo-caption">
           <span>Tour de piscine</span>
           <small>Moquette de pierre</small>
         </div>
       </a>
       <a href="realisations.html" class="hero__photo hero__photo--bottom" aria-label="Voir nos réalisations carrelage">
-        <img src="images/realisation-escalier.jpg" alt="Escalier extérieur en carrelage effet bois" loading="eager">
+        <img src="images/realisation-escalier.webp" alt="Escalier extérieur en carrelage effet bois" loading="eager">
         <div class="hero__photo-caption">
           <span>Escalier extérieur</span>
           <small>Carrelage effet bois</small>
@@ -225,7 +337,7 @@
         <div class="intro__signature">— Burtey, artisan carreleur</div>
       </div>
       <div class="intro__visual reveal">
-        <img src="images/artisan.jpg" alt="L'artisan Burtey devant son camion floqué" loading="lazy">
+        <img src="images/artisan.webp" alt="L'artisan Burtey devant son camion floqué" loading="lazy">
       </div>
     </div>
   </div>
@@ -249,7 +361,7 @@
       <!-- Service 1 : Carrelage -->
       <a href="services.html#carrelage" class="service-card reveal">
         <div class="service-card__media">
-          <img src="images/service-carrelage.jpg" alt="Pose de carrelage grand format" loading="lazy">
+          <img src="images/service-carrelage.webp" alt="Pose de carrelage grand format" loading="lazy">
         </div>
         <div class="service-card__body">
           <h3>Carrelage</h3>
@@ -261,7 +373,7 @@
       <!-- Service 2 : Résine -->
       <a href="services.html#resine" class="service-card reveal">
         <div class="service-card__media">
-          <img src="images/service-resine.jpg" alt="Application de résine décorative pailletée" loading="lazy">
+          <img src="images/service-resine.webp" alt="Application de résine décorative pailletée" loading="lazy">
         </div>
         <div class="service-card__body">
           <h3>Résine pailletée</h3>
@@ -273,7 +385,7 @@
       <!-- Service 3 : Moquette de pierre -->
       <a href="services.html#moquette" class="service-card reveal">
         <div class="service-card__media">
-          <img src="images/service-moquette.jpg" alt="Pose de moquette de pierre" loading="lazy">
+          <img src="images/service-moquette.webp" alt="Pose de moquette de pierre" loading="lazy">
         </div>
         <div class="service-card__body">
           <h3>Moquette de pierre</h3>
@@ -350,7 +462,7 @@
           de pierre — partout en Bourgogne et Rhône-Alpes.
         </p>
         <a href="services.html#moquette" class="footer__partner" aria-label="Partenaire applicateur Résineo">
-          <img src="images/resineo-partenaire.jpg" alt="" loading="lazy">
+          <img src="images/resineo-partenaire.webp" alt="" loading="lazy">
           <span>Partenaire applicateur<br><strong>Résineo</strong></span>
         </a>
       </div>
@@ -377,7 +489,7 @@
         <ul>
           <li><a href="tel:+33609485418">06 09 48 54 18</a></li>
           <li><a href="mailto:burtey.carrelage@gmail.com">burtey.carrelage@gmail.com</a></li>
-          <li>Tournus (71700)</li>
+          <li>Tournus et 60 km alentour</li>
         </ul>
       </div>
     </div>
@@ -395,6 +507,6 @@
   </svg>
 </a>
 
-<script src="js/main.js"></script>
+<script src="js/main.js?v=20261003"></script>
 </body>
 </html>

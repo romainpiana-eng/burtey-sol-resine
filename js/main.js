@@ -166,3 +166,57 @@ if (lightbox && galleryItems.length) {
 // --- Année dynamique footer ---
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+// ============================================
+//   MESURE D'AUDIENCE — conversions
+//   Fonctionne avec Umami ou Matomo dès que l'un des deux est installé ;
+//   sans outil, ces appels ne font rien.
+// ============================================
+const track = (name) => {
+  try {
+    if (window.umami && typeof window.umami.track === 'function') window.umami.track(name);
+    if (Array.isArray(window._paq)) window._paq.push(['trackEvent', 'Contact', name]);
+  } catch (e) {}
+};
+
+// --- Clics de contact (tous les liens du site, y compris le bouton flottant) ---
+document.addEventListener('click', (e) => {
+  const link = e.target.closest('a[href]');
+  if (!link) return;
+  const href = link.getAttribute('href');
+  if (href.startsWith('https://wa.me/')) track('Clic WhatsApp');
+  else if (href.startsWith('tel:')) track('Clic téléphone');
+  else if (href.startsWith('mailto:')) track('Clic e-mail');
+});
+
+// --- Formulaire de devis ---
+// Le formulaire quitte la page vers Formspree : on laisse 400 ms à
+// l'événement pour partir, puis on envoie — la demande part dans tous les cas.
+const devisForm = document.querySelector('form[action*="formspree.io"]');
+if (devisForm) {
+  devisForm.addEventListener('submit', (e) => {
+    if (devisForm.dataset.sending) return;
+    e.preventDefault();
+    devisForm.dataset.sending = '1';
+    track('Devis envoyé');
+    setTimeout(() => devisForm.submit(), 400);
+  });
+}
+
+// ============================================
+//   CARTE GOOGLE MAPS — chargée uniquement au clic
+//   (aucun échange avec Google avant l'action du visiteur)
+// ============================================
+document.querySelectorAll('[data-map-src]').forEach((wrap) => {
+  const btn = wrap.querySelector('.map-consent button');
+  if (!btn) return;
+  btn.addEventListener('click', () => {
+    const iframe = document.createElement('iframe');
+    iframe.src = wrap.dataset.mapSrc;
+    iframe.title = wrap.dataset.mapTitle || 'Carte';
+    iframe.setAttribute('allowfullscreen', '');
+    iframe.setAttribute('referrerpolicy', 'no-referrer-when-downgrade');
+    iframe.style.border = '0';
+    wrap.querySelector('.map-consent').replaceWith(iframe);
+  });
+});
